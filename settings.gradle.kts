@@ -1,8 +1,10 @@
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven("https://dl.bintray.com/kotlin/kotlin-eap")
     }
 }
 dependencyResolutionManagement {
@@ -13,7 +15,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "moduleservice"
-include ':app'
-include ':service'
-include ':annotation'
-include ':compiler'
+include(":app")
+include(":service")
+include(":annotation")
+include(":compiler")
