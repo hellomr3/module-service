@@ -3,6 +3,7 @@
 package com.youpao.service
 
 object ServiceManager {
+
     private val serviceLruCache = ServiceLruCache(20)
     private val i2ImplMap = HashMap<String, String>()
 
@@ -12,7 +13,7 @@ object ServiceManager {
      * @return T?
      */
     fun <T : IService> getServiceByInterface(iClass: Class<T>): T? {
-        val iName = iClass.simpleName
+        val iName = iClass.name
         val implName = i2ImplMap.getOrDefault(iName, null) ?: return null
         if (serviceLruCache.get(implName) != null) {
             return serviceLruCache.get(implName) as? T
@@ -38,4 +39,6 @@ object ServiceManager {
     fun register(interfaceName: String, implName: String) {
         i2ImplMap[interfaceName] = implName
     }
+
+    fun getMap() = i2ImplMap
 }

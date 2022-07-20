@@ -3,12 +3,8 @@ plugins {
     kotlin("jvm")
 }
 
-sourceSets.main {
-    java.srcDirs("src/main/kotlin")
-}
-
 dependencies {
-    implementation(project(":annotation"))
+    implementation(project(":service"))
 
     implementation("com.squareup:kotlinpoet:1.10.2")
     implementation("com.squareup:kotlinpoet-ksp:1.10.2")

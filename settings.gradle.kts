@@ -17,5 +17,5 @@ dependencyResolutionManagement {
 rootProject.name = "moduleservice"
 include(":app")
 include(":service")
-include(":annotation")
+//include(":annotation")
 include(":compiler")

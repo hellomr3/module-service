@@ -18,9 +18,5 @@ plugins {
 //}
 
 dependencies {
-    implementation(project(":annotation"))
-    implementation(project(":compiler"))
-    ksp(project(":compiler"))
-
     implementation( "androidx.collection:collection:1.1.0")
 }

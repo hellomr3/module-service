@@ -1,9 +1,9 @@
-package com.youpao.compiler
 
 import com.google.auto.service.AutoService
 import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment
 import com.google.devtools.ksp.processing.SymbolProcessorProvider
+import com.youpao.compiler.ModuleServiceProcessor
 
 /**
  * @author guoqingshan
@@ -13,6 +13,6 @@ import com.google.devtools.ksp.processing.SymbolProcessorProvider
 @AutoService(SymbolProcessorProvider::class)
 class ModuleServiceProvider : SymbolProcessorProvider {
     override fun create(environment: SymbolProcessorEnvironment): SymbolProcessor {
-        return ModuleServiceProcessor(environment.codeGenerator, environment.logger)
+        return ModuleServiceProcessor(environment.codeGenerator, environment.logger, emptyMap())
     }
 }

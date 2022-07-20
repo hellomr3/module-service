@@ -5,16 +5,16 @@ plugins {
 }
 
 android {
-    compileSdk =32
+    compileSdk = 32
 
     defaultConfig {
-        applicationId= "com.youpao.moduleservice"
-        minSdk =21
-        targetSdk =32
-        versionCode= 1
-        versionName ="1.0"
+        applicationId = "com.youpao.moduleservice"
+        minSdk = 21
+        targetSdk = 32
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner= "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
@@ -24,9 +24,8 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
     ksp {
-
+        arg("enable", "true")
     }
     applicationVariants.all {
         val variantName = name
@@ -48,9 +47,8 @@ kotlin {
 }
 
 dependencies {
-    implementation( project(":annotation"))
-
-    implementation( project(":compiler"))
+    implementation(project(":service"))
+    implementation(project(":compiler"))
     ksp(project(":compiler"))
 
     implementation(kotlin("stdlib-jdk8"))
