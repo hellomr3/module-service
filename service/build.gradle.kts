@@ -1,13 +1,8 @@
 plugins {
+//    id("maven-publish")
+    id("com.google.devtools.ksp")
     kotlin("jvm")
-    id("maven-publish")
 }
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
-}
-
 
 //
 //publishing {
@@ -23,5 +18,9 @@ java {
 //}
 
 dependencies {
+    implementation(project(":annotation"))
+    implementation(project(":compiler"))
+    ksp(project(":compiler"))
+
     implementation( "androidx.collection:collection:1.1.0")
 }

@@ -3,13 +3,12 @@ plugins {
     kotlin("jvm")
 }
 
-sourceSets.main{
+sourceSets.main {
     java.srcDirs("src/main/kotlin")
 }
 
 dependencies {
     implementation(project(":annotation"))
-    implementation(project(":service"))
 
     implementation("com.squareup:kotlinpoet:1.10.2")
     implementation("com.squareup:kotlinpoet-ksp:1.10.2")
@@ -21,11 +20,7 @@ dependencies {
     ksp("dev.zacsweers.autoservice:auto-service-ksp:0.5.2")
 }
 
-kotlin {
-    sourceSets.main {
-        kotlin.srcDir("build/generated/ksp/main/kotlin")
-    }
-    sourceSets.test {
-        kotlin.srcDir("build/generated/ksp/test/kotlin")
-    }
+
+sourceSets.main {
+    java.srcDirs("src/main/kotlin")
 }
