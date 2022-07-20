@@ -47,9 +47,9 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":service"))
-    implementation(project(":compiler"))
-    ksp(project(":compiler"))
+    implementation("com.looptry.service:demo:1.0.0")
+    implementation("com.looptry.service:compiler:1.0.0")
+    ksp("com.looptry.service:compiler:1.0.0")
 
     implementation(kotlin("stdlib-jdk8"))
 

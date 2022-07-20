@@ -1,6 +1,19 @@
 plugins {
     id("com.google.devtools.ksp")
     kotlin("jvm")
+    `maven-publish`
+}
+
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.looptry.service"
+            artifactId = "compiler"
+            version = "1.0.0"
+            from(components["java"])
+        }
+    }
 }
 
 dependencies {
